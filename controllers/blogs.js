@@ -7,12 +7,13 @@ router.get('/', async (req, res) => {
   res.json(blogs)
 })
 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res, next) => {
   try {
     const blog = await Blog.create(req.body)
     res.json(blog)
   } catch(error) {
-    return res.status(400).json({ error })
+    error.statusCode = 400
+    next(error)
   }
 })
 
@@ -28,14 +29,19 @@ router.delete('/:id', blogFinder, async (req, res) => {
   res.status(204).end()
 })
 
-router.put('/:id', blogFinder, async (req, res) => {
+router.put('/:id', blogFinder, async (req, res, next) => {
+  try {
   if (req.blog) {
     req.blog.likes = req.body.likes
     await req.blog.save()
     res.json(req.blog)
   } else {
-    res.status(404).end()
+    const error = new Error(`Could not find a blog with given id`)
+    error.statusCode = 404
+    next(error)
   }
-})
+} catch (error) {
+  next(error)
+}})
 
 module.exports = router
