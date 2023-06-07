@@ -10,7 +10,7 @@ const getBlogs = async () => {
       console.log('No blogs found')
     } else {
       blogs.forEach((blog) => {
-        console.log(`${blog.author}: ${blog.title}, ${blog.likes} likes`)
+        console.log(`${blog.author}: '${blog.title}', ${blog.likes} likes`)
       })
     }
   } catch (error) {
