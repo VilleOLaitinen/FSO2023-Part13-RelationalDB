@@ -17,7 +17,13 @@ const errorHandler = (error, req, res, next) => {
   console.error('Error handling MW says: ', error.message)
   const statusCode = error.statusCode || error.status || 500;
   res.status(statusCode);
+  if (error.message.includes('Validation isEmail on username failed')) {
+    console.error('Error handling MW says: ', error.message, '| Username must be a valid email address.')
+    res.json({error: {message: 'Username must be a valid email address.'}})
+  } else {
+  console.error('Error handling MW says: ', error.message)
   res.json({error: {message: error.message}})
+  }
 }
 
 app.use(errorHandler)
