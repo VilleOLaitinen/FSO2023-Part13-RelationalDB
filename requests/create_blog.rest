@@ -1,10 +1,10 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1dUBnbWFpbC5jb20iLCJpZCI6MiwiaWF0IjoxNjg2MjMwMzAwfQ.gP4cWtGQr30_e0Xnyd2Scv4i2tGBO5DM-b2PhN94yqA
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJ4QGdtYWlsLmNvbSIsImlkIjozLCJpYXQiOjE2ODYyMzY5MTl9.fsiigwJRusc4QZVLapowaoHWezH2wIHkl3q8GCpZ6_k
 
 {
-  "author": "Huu Huu",
-  "url": "www.thisurlh.fi",
-  "title": "this is a title H",
+  "author": "Muu Muu",
+  "url": "www.notread.fi",
+  "title": "this blog will be also be marked read",
   "year": 2007
 }
