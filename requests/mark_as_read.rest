@@ -1,10 +1,7 @@
-POST http://localhost:3003/api/blogs
+PUT http://localhost:3003/api/readinglists/3
 Content-Type: application/json
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imh1dUBnbWFpbC5jb20iLCJpZCI6MiwiaWF0IjoxNjg2MjMwMzAwfQ.gP4cWtGQr30_e0Xnyd2Scv4i2tGBO5DM-b2PhN94yqA
 
 {
-  "author": "Huu Huu",
-  "url": "www.thisurlh.fi",
-  "title": "this is a title H",
-  "year": 2007
+  "read": true
 }
